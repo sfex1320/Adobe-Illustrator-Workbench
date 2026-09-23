@@ -1,0 +1,13 @@
+{
+  "name": "@aiq/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@aiq/contracts": "0.1.0",
+    "polygon-clipping": "0.15.7"
+  }
+}

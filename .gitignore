@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.vite/
+coverage/
+host/cep-package/
+host/cep/com.aiq.workbench/panel/
+npm-debug.log*
+releases/
+artifacts/

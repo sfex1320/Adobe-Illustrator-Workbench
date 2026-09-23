@@ -1,0 +1,410 @@
+/* 主题语义变量：浅色与深色两套。跟随模式由 ThemeProvider 解析后设置 data-theme。 */
+
+:root,
+[data-theme='light'] {
+  --aiq-bg: #f5f5f3;
+  --aiq-bg-panel: #ffffff;
+  --aiq-bg-subtle: #eef0f3;
+  --aiq-border: #d7dbe2;
+  --aiq-text: #1f2430;
+  --aiq-text-muted: #5b6472;
+  --aiq-accent: #91551b;
+  --aiq-accent-text: #ffffff;
+  --aiq-accent-soft: #f7e9d9;
+  --aiq-danger: #c23a3a;
+  --aiq-danger-soft: #fdeaea;
+  --aiq-warn: #9a6b0c;
+  --aiq-warn-soft: #fdf3df;
+  --aiq-ok: #1f7a3d;
+  --aiq-ok-soft: #e4f4e9;
+  --aiq-shadow: 0 1px 3px rgba(16, 24, 40, 0.12);
+}
+
+[data-theme='dark'] {
+  --aiq-bg: #252628;
+  --aiq-bg-panel: #2d2e30;
+  --aiq-bg-subtle: #363739;
+  --aiq-border: #434447;
+  --aiq-text: #eeefef;
+  --aiq-text-muted: #afb0b2;
+  --aiq-accent: #e5ab6d;
+  --aiq-accent-text: #25190f;
+  --aiq-accent-soft: #493d31;
+  --aiq-danger: #ff8080;
+  --aiq-danger-soft: #45262a;
+  --aiq-warn: #e5b767;
+  --aiq-warn-soft: #453a25;
+  --aiq-ok: #6fce8e;
+  --aiq-ok-soft: #21402c;
+  --aiq-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--aiq-bg);
+  color: var(--aiq-text);
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Segoe UI', system-ui, sans-serif;
+  font-size:calc(12px * var(--aiq-ui-scale, 1));
+  line-height: 1.5;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* 焦点可见（键盘操作验收 U04）。 */
+:focus-visible {
+  outline: 2px solid var(--aiq-accent);
+  outline-offset: 1px;
+}
+
+.aiq-tooltip {z-index:2147483647;pointer-events:none;padding:0.75em 1em;border:1px solid var(--aiq-border);border-radius:0.65em;background:var(--aiq-bg-panel);color:var(--aiq-text);box-shadow:var(--aiq-shadow);font:inherit;line-height:1.55;overflow-wrap:anywhere;white-space:pre-wrap;}
+
+.aiq-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+.aiq-appbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--aiq-border);
+  background: var(--aiq-bg-panel);
+  flex-wrap: wrap;
+}
+
+.aiq-app-title {
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.aiq-body {
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.aiq-nav {
+  width: 132px;
+  flex: 0 0 auto;
+  border-right: 1px solid var(--aiq-border);
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--aiq-bg-panel);
+}
+
+.aiq-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--aiq-text);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.aiq-nav-item[aria-current='true'] {
+  background: var(--aiq-accent-soft);
+  border-color: var(--aiq-accent);
+}
+
+.aiq-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aiq-card {
+  background: var(--aiq-bg-panel);
+  border: 1px solid var(--aiq-border);
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: none;
+}
+
+.aiq-card-title {
+  font-weight: 600;
+  margin: 0 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.aiq-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.aiq-stat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.aiq-stat-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+.aiq-stat-row.is-clickable {
+  cursor: pointer;
+}
+
+.aiq-stat-row.is-clickable:hover {
+  background: var(--aiq-bg-subtle);
+}
+
+.aiq-stat-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.aiq-stat-value {
+  font-variant-numeric: tabular-nums;
+  color: var(--aiq-text-muted);
+}
+
+.aiq-mono {
+  font-family: Consolas, 'Courier New', monospace;
+  font-size:calc(12px * var(--aiq-ui-scale, 1));
+}
+
+.aiq-empty {
+  padding: 18px 10px;
+  text-align: center;
+  color: var(--aiq-text-muted);
+}
+
+.aiq-error-text {
+  color: var(--aiq-danger);
+}
+
+.aiq-result-item {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid var(--aiq-border);
+  background: var(--aiq-bg);
+  margin-bottom: 4px;
+}
+
+.aiq-path {
+  color: var(--aiq-text-muted);
+  font-size:calc(12px * var(--aiq-ui-scale, 1));
+  word-break: break-all;
+}
+
+.aiq-scopebar {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 8px 10px;
+  background: var(--aiq-bg-panel);
+  border-bottom: 1px solid var(--aiq-border);
+}
+
+.aiq-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size:calc(12px * var(--aiq-ui-scale, 1));
+  color: var(--aiq-text-muted);
+  cursor: pointer;
+}
+
+.aiq-switch input[type='checkbox'] {
+  accent-color: var(--aiq-accent);
+}
+
+.aiq-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 999px;
+  padding: 1px 8px;
+  font-size:calc(12px * var(--aiq-ui-scale, 1));
+  border: 1px solid var(--aiq-border);
+  background: var(--aiq-bg-subtle);
+  color: var(--aiq-text-muted);
+}
+
+.aiq-badge[data-tone='demo'] {
+  background: var(--aiq-warn-soft);
+  color: var(--aiq-warn);
+  border-color: var(--aiq-warn);
+}
+
+.aiq-badge[data-tone='ok'] {
+  background: var(--aiq-ok-soft);
+  color: var(--aiq-ok);
+  border-color: var(--aiq-ok);
+}
+
+.aiq-badge[data-tone='danger'] {
+  background: var(--aiq-danger-soft);
+  color: var(--aiq-danger);
+  border-color: var(--aiq-danger);
+}
+
+.aiq-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--aiq-border);
+  background: var(--aiq-bg-panel);
+  color: var(--aiq-text);
+  cursor: pointer;
+}
+
+.aiq-button:hover:not(:disabled) {
+  background: var(--aiq-bg-subtle);
+}
+
+.aiq-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.aiq-button[data-variant='primary'] {
+  background: var(--aiq-accent);
+  border-color: var(--aiq-accent);
+  color: var(--aiq-accent-text);
+}
+
+.aiq-button[data-variant='primary']:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.aiq-input,
+.aiq-select {
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--aiq-border);
+  background: var(--aiq-bg-panel);
+  color: var(--aiq-text);
+  font-family: inherit;
+  font-size:calc(13px * var(--aiq-ui-scale, 1));
+}
+
+.aiq-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.aiq-field > label {
+  font-size:calc(12px * var(--aiq-ui-scale, 1));
+  color: var(--aiq-text-muted);
+}
+
+.aiq-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10vh;
+  z-index: 50;
+}
+
+.aiq-dialog {
+  width: min(420px, calc(100vw - 24px));
+  background: var(--aiq-bg-panel);
+  border: 1px solid var(--aiq-border);
+  border-radius: 10px;
+  box-shadow: var(--aiq-shadow);
+  padding: 12px;
+}
+
+.aiq-command-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  max-height: 50vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* 窄面板：导航移到上方横向滚动，保留图标和文字。 */
+@media (max-width: 600px) {
+  .aiq-body {
+    flex-direction: column;
+  }
+  .aiq-nav {
+    width: auto;
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid var(--aiq-border);
+    overflow-x: auto;
+    padding: 6px;
+  }
+
+  .aiq-nav-item {
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+  .aiq-nav-item .aiq-nav-label {
+    display: inline;
+    white-space: nowrap;
+  }
+
+  .aiq-main {
+    padding: 8px;
+  }
+  .aiq-stat-label {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .aiq-stat-value {
+    flex-shrink: 0;
+    max-width: 45%;
+    overflow-wrap: anywhere;
+  }
+}

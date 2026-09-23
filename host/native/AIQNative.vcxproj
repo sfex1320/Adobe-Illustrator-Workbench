@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations"><ProjectConfiguration Include="Release|x64"><Configuration>Release</Configuration><Platform>x64</Platform></ProjectConfiguration></ItemGroup>
+  <PropertyGroup Label="Globals"><ProjectGuid>{94E2DCED-210A-4D8C-934F-DBE653716319}</ProjectGuid><WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion></PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration"><ConfigurationType>DynamicLibrary</ConfigurationType><PlatformToolset>v143</PlatformToolset><UseDebugLibraries>false</UseDebugLibraries></PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup><OutDir>$(MSBuildThisFileDirectory)..\..\artifacts\native\</OutDir><IntDir>$(OutDir)obj\</IntDir><TargetName>AIQNative</TargetName><TargetExt>.aip</TargetExt></PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile><WarningLevel>Level4</WarningLevel><LanguageStandard>stdcpp17</LanguageStandard><RuntimeLibrary>MultiThreaded</RuntimeLibrary><ExceptionHandling>Sync</ExceptionHandling><PreprocessorDefinitions>$(AIQNativeDefines);WIN_ENV;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions><AdditionalIncludeDirectories>$(AIQSdkRoot)\illustratorapi\illustrator;$(AIQSdkRoot)\illustratorapi\ate;$(AIQSdkRoot)\illustratorapi\pica_sp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ClCompile>
+    <Link><SubSystem>Windows</SubSystem><OptimizeReferences>true</OptimizeReferences><EnableCOMDATFolding>true</EnableCOMDATFolding></Link>
+  </ItemDefinitionGroup>
+  <ItemGroup><ClCompile Include="AIQNative.cpp" /><ResourceCompile Include="AIQNative.rc" /></ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Target Name="RequireSDK" BeforeTargets="PrepareForBuild"><Error Condition="!Exists('$(AIQSdkRoot)\illustratorapi\illustrator\AIDocument.h')" Text="Set AIQSdkRoot to the extracted Illustrator Windows SDK root." /></Target>
+</Project>

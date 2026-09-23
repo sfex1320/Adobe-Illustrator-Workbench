@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>效率工作台</title>
+  </head>
+  <body>
+    <div id="root"><section style="padding:20px;background:#252628;color:#eee;min-height:100vh;font:14px sans-serif"><h2>效率工作台</h2><p id="startup-status" role="status">正在加载工作台…</p><noscript>页面脚本未启用，无法启动工作台。</noscript></section></div>
+    <script>
+      // Runs before module loading; still visible if the entry script cannot load.
+      (function () {
+        var startupFailed = false;
+        function failed() {
+          startupFailed = true;
+          var message = document.getElementById('startup-status');
+          if (message) message.textContent = '工作台启动失败。请关闭并重新打开面板；如仍失败，请反馈给开发者。';
+        }
+        window.addEventListener('error', failed, true);
+        window.addEventListener('unhandledrejection', failed);
+        setTimeout(function () {
+          var message = document.getElementById('startup-status');
+          if (message && !startupFailed) message.textContent = '工作台仍在等待启动。若 Illustrator 有对话框，请先处理；如持续停留，请反馈给开发者。';
+        }, 15000);
+      }());
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

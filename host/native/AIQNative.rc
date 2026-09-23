@@ -1,0 +1,12 @@
+#include <windows.h>
+#define FOURCC(a,b,c,d) #d, #c, #b, #a
+16000 PiPL DISCARDABLE
+BEGIN
+    0x0001,
+    0L,
+    4L,
+    FOURCC(A,D,B,E), FOURCC(k,i,n,d), 0L, 4L, FOURCC(S,P,E,A),
+    FOURCC(A,D,B,E), FOURCC(i,v,r,s), 0L, 4L, 2L,
+    FOURCC(A,D,B,E), FOURCC(w,x,8,6), 0L, 12L, "PluginMain\0\0",
+    FOURCC(A,D,B,E), FOURCC(p,i,n,m), 0L, 12L, "AIQNative\0\0\0"
+END

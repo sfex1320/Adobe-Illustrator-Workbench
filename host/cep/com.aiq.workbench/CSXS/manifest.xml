@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionManifest ExtensionBundleId="com.aiq.workbench"
+                   ExtensionBundleVersion="0.6.13"
+                   Version="7.0"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ExtensionList>
+    <Extension Id="com.aiq.workbench.main" Version="0.6.13"/>
+  </ExtensionList>
+  <ExecutionEnvironment>
+    <HostList>
+      <!-- 本地已验证 30.0.0；其他版本需单独验证后扩展区间 -->
+      <Host Name="ILST" Version="[30.0,30.0]"/>
+    </HostList>
+    <LocaleList>
+      <Locale Code="All"/>
+    </LocaleList>
+    <RequiredRuntimeList>
+      <RequiredRuntime Name="CSXS" Version="12.0"/>
+    </RequiredRuntimeList>
+  </ExecutionEnvironment>
+  <DispatchInfoList>
+    <Extension Id="com.aiq.workbench.main">
+      <DispatchInfo>
+        <Resources>
+          <MainPath>./index.html</MainPath>
+          <ScriptPath>./hostscript.jsx</ScriptPath>
+          <CEFCommandLine>
+            <Parameter>--allow-file-access</Parameter>
+            <Parameter>--allow-file-access-from-files</Parameter>
+            <!-- Panel sizes are explicit; keep host font minimums from enlarging text alone. -->
+            <Parameter>--blink-settings=minimumFontSize=0,minimumLogicalFontSize=0</Parameter>
+          </CEFCommandLine>
+        </Resources>
+        <Lifecycle>
+          <AutoVisible>true</AutoVisible>
+        </Lifecycle>
+        <UI>
+          <Type>Panel</Type>
+          <Menu>效率工作台</Menu>
+          <Geometry>
+            <Size>
+              <Height>760</Height>
+              <Width>420</Width>
+            </Size>
+            <MaxSize><Height>10000</Height><Width>10000</Width></MaxSize>
+            <MinSize>
+              <Height>280</Height>
+              <Width>320</Width>
+            </MinSize>
+          </Geometry>
+        </UI>
+      </DispatchInfo>
+    </Extension>
+  </DispatchInfoList>
+</ExtensionManifest>

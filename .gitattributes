@@ -1,0 +1,5 @@
+# 统一行尾：仓库内 LF，Windows 检出按需转换。
+* text=auto
+*.png binary
+*.jpg binary
+*.pdf binary

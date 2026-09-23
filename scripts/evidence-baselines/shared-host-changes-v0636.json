@@ -1,0 +1,15 @@
+{
+  "before": {
+    "readEditor": "92fe53a1a2480e9389cc0057c7f441d9ced59e7a9355f8875bd1b68b31de9ba6",
+    "setItemBounds": "6e206ef85e9a6c22c1dfcda4bf18d169723aaa26f665f9fa271e02ccacb93b1c",
+    "verifiedNativeCommands": "a7bb954bfc187a195205a75d22765f12d4020562e4b20ced0593c291a728535b",
+    "variableText": "c3f48668c03e5db6055c52b2396a80597d0e294f1c7be5be28d8259a1b786e68"
+  },
+  "after": {
+    "editorStackOrder": "4a2326dfc3f5a9087852416ed94871c66cdfe9a1114589d74a14d2e1484af324",
+    "readEditor": "d29a9ec06f6bc1a54527ed45eac220e49ec07328f69065fc2b562ac143b7c06a",
+    "setItemBounds": "8d134231fd9fa86253bf5453666d97ef67bb1ddf52ec97b31c3a94ef47ae1075",
+    "verifiedNativeCommands": "95cfa2b29ea765c3c50affc14da65ae92b2f19f3b01588ea978f42e7f2c22590",
+    "variableText": "847457f96a1e7b38bee57c2be158a4021000aabd4fbaf174114e1680e9df4e00"
+  }
+}

@@ -1,0 +1,1 @@
+{"name":"@aiq/module-productivity","version":"0.1.0","private":true,"type":"module","exports":{".":"./src/index.ts"},"dependencies":{"@aiq/contracts":"0.1.0","@aiq/core":"0.1.0","bwip-js":"4.11.4"},"peerDependencies":{"react":"^18.3.0"}}

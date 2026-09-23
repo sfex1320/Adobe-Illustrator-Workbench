@@ -1,0 +1,27 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": [
+    "apps/panel/src",
+    "apps/panel/vite.config.ts",
+    "packages/contracts/src",
+    "packages/core/src",
+    "packages/host-adapter/src",
+    "packages/ui/src",
+    "packages/fixtures/src",
+    "packages/modules/statistics/src",
+    "packages/modules/selection/src",
+    "packages/modules/text-write/src",
+    "packages/modules/size-align/src",
+    "packages/modules/replace/src",
+    "packages/modules/symmetry/src",
+    "packages/modules/export/src",
+    "packages/modules/preflight/src",
+    "tests",
+    "scripts/package-cep.mjs",
+    "packages/modules/variable-data/src",
+    "packages/modules/artboards/src",
+    "packages/modules/productivity/src",
+    "packages/modules/style-transfer/src"
+  ],
+  "references": []
+}

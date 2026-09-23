@@ -1,0 +1,31 @@
+{
+  "protocol": 1,
+  "localOnly": true,
+  "files": [
+    {
+      "path": "ghostscript-10.08.0/bin/gswin64c.exe",
+      "sha256": "9b29d3b5128c6d53bb4e9eee77e3919d05038cdfdd8e07697af4d9c319f9d5ad"
+    },
+    {
+      "path": "ghostscript-10.08.0/bin/gsdll64.dll",
+      "sha256": "a134ed0d3af749bdab93c66029180e676d36d9cc624c192ea287f73c891fb0af"
+    },
+    {
+      "path": "ghostscript-10.08.0/iccprofiles/default_cmyk.icc",
+      "sha256": "8472fa1493a024b800b67dee9424835ec0c41ab79490200ae8ec4a689fd1b9a9"
+    },
+    {
+      "path": "ghostscript-10.08.0/iccprofiles/srgb.icc",
+      "sha256": "eddaf344b5edea13269e0d20055f335610e5e0b6e33e6e536f2701bc18c5f7d5"
+    },
+    {
+      "path": "jpeg-3.2.0/bin/jpegtran.exe",
+      "sha256": "671166b760a6b0e6b9888ce471fcb97c2a245db07512cd75c23ee29148d0acd0"
+    },
+    {
+      "path": "jpeg-3.2.0/bin/jpeg62.dll",
+      "sha256": "6db16a1e3909aa2ddf25854a2e20c896d2703570d24bc83a52eb25940c0654a5"
+    }
+  ],
+  "optional": true
+}
